@@ -1,0 +1,14 @@
+<% if obj.errors.any? %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h2 class="panel-title">The following errors prevented the article from getting created.</h2>
+      <div class="panel-body">
+        <uL>
+          <% obj.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </uL>
+      </div>
+    </div>
+  </div>
+<% end %>
