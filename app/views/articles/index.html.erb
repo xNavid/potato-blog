@@ -1,18 +1,33 @@
-<h1>All the articles</h1>
-<h3><%= link_to "Create new article",new_article_path %></h3>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
+<div class="container">
+<h1 class="text-center">All the articles</h1>
+
+<% @articles.each do |article| %>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-11">
+              <h4><%= link_to article.title, article_path(article) %></h4>
+            </div>
+            <div class="col-md-1">
+              <span class="dropdown">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Edit", edit_article_path(article)%></li>
+                  <li><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Delete this post?"}, class: "text-danger" %></li>
+                </ul> 
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+            <%= article.description %>
+        </div>
+      </div>
+    </div>
+  </div>
   
-  <% @articles.each do |article| %>  
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.description %></td>
-    <td><%= link_to "Edit", edit_article_path(article) %></td>
-    <td><%= link_to "Show", article_path(article) %></td>
-    <td><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Delete this post?"} %></td>
-  </tr>
-  <% end %>
-</table>
+<% end %>
+</div>
