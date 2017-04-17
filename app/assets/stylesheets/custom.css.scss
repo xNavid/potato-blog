@@ -1,4 +1,27 @@
+html { height: 100%; }
 
+body {
+    min-height:100%; 
+    position:relative; 
+    padding-bottom: 80px;
+    background-color: #eee;
+    position: relative;
+
+}
+/*
+===============================
+    Navigation
+===============================
+*/
+.navbar {
+  border-radius: 0 !important;
+}
+
+/*
+===============================
+    Jumbotron
+===============================
+*/
 .jumbotron {
   
   background-size: cover;
@@ -12,6 +35,11 @@
   border-radius: 5px;
 }
 
+/*
+===============================
+    Footer
+===============================
+*/
 .footer {
     position: absolute; 
     left: 0 ; 
@@ -24,5 +52,10 @@
     padding-top: 10px;
 }
 
+/*
+===============================
+    Imports
+===============================
+*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
