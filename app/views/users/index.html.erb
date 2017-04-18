@@ -1,0 +1,18 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="well well-sm">
+    <h3 class="text-center">All Users</h3>
+  </div>
+  <% @users.each do |user| %>
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading user-header">
+          <%= link_to gravatar_for(user), user_path(user) %>
+          <h3 class="username article-title"><%= link_to user.username, user_path(user) %></h3>
+        </div>
+        <div class="panel-footer">
+          <small><%= pluralize(user.articles.count, "article") if user.articles %></small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
