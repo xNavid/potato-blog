@@ -72,5 +72,19 @@ body {
   font-weight: 400;
   line-height: 1.5;
 }
+
+.img-rounded {
+  position: relative;
+  bottom: -20px;
+}
+
+.user-header {
+  position: relative;
+}
+.username {
+  margin: 10px;
+  position: absolute;
+  bottom: 0;
+}
 @import "bootstrap-sprockets";
 @import "bootstrap";

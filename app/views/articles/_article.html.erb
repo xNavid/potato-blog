@@ -1,0 +1,36 @@
+<div class="container">
+<% obj.each do |article| %>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-11">
+              <h4><%= link_to article.title, article_path(article) %></h4>
+            </div>
+            <div class="col-md-1">
+              <span class="dropdown">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li><%= link_to "Edit", edit_article_path(article)%></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Delete this post?"}, class: "text-danger" %></li>
+                </ul> 
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+            <%= truncate(article.description, length: 100) %>
+        </div>
+        <div class="panel-footer">
+          <small>Created by: <%= article.user.username if article.user %> | <%= time_ago_in_words (article.created_at) %> ago </small>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<% end %>
+
+</div>
