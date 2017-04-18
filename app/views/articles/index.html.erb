@@ -14,8 +14,9 @@
             <div class="col-md-1">
               <span class="dropdown">
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-menu-right">
                   <li><%= link_to "Edit", edit_article_path(article)%></li>
+                  <li role="separator" class="divider"></li>
                   <li><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Delete this post?"}, class: "text-danger" %></li>
                 </ul> 
               </span>
