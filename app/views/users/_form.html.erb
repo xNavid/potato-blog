@@ -1,0 +1,26 @@
+
+<%= render "shared/errors", obj: @user %>
+<%= form_for(@user, :html => {class: "form", role: "form"}) do |f| %>
+  
+    <div class="form-group">
+      <%= f.label :username %>
+      <%= f.text_field :username, class: "form-control", placeholder: "J.Doe", autofocus: true %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control", placeholder: "you@example.com" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control", placeholder: "••••••••" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.submit(@user.new_record? ? "Sign Up" : "Update", class: "btn btn-success form-control") %>
+    </div>
+  
+<% end %>
+
+
