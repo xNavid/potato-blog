@@ -6,7 +6,7 @@
           <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
           <h3 class="username article-title"><%= link_to @article.user.username, user_path(@article.user) %></h3>
         </div>
-        <% if signed_in? && current_user == @article.user %>
+        <% if signed_in? && (current_user == @article.user || current_user.admin?) %>
           <div class="col-md-1">
             <span class="dropdown">
             <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
