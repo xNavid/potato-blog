@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :set_user, only: [:edit, :update, :show]
+  before_action :require_same_user, only: [:edit, :update]
   
   def set_user
     @user = User.find(params[:id])
@@ -49,4 +50,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :email, :password)
   end
   
+  def require_same_user
+    if current_user != @user
+      flash[:danger] = "401 - Unauthorized: Access is denied due to invalid credentials"
+      redirect_to root_path
+    end
+  end
 end
