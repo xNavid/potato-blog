@@ -6,16 +6,18 @@
           <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
           <h3 class="username article-title"><%= link_to @article.user.username, user_path(@article.user) %></h3>
         </div>
-        <div class="col-md-1">
-          <span class="dropdown">
-          <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
-          <ul class="dropdown-menu dropdown-menu-right">
-            <li><%= link_to "Edit", edit_article_path(@article)%></li>
-            <li role="separator" class="divider"></li>
-            <li><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Delete this post?"}, class: "text-danger" %></li>
-          </ul> 
-        </span>
-        </div>
+        <% if signed_in? && current_user == @article.user %>
+          <div class="col-md-1">
+            <span class="dropdown">
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><%= link_to "Edit", edit_article_path(@article)%></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Delete this post?"}, class: "text-danger" %></li>
+            </ul> 
+            </span>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="panel-body">
