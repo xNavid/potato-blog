@@ -10,7 +10,10 @@
           <h3 class="username article-title"><%= link_to user.username, user_path(user) %></h3>
         </div>
         <div class="panel-footer">
-          <small><%= pluralize(user.articles.count, "article") if user.articles %></small>
+          <span class="label label-success"><%= pluralize(user.articles.count, "article") if user.articles %></span>
+          <% if signed_in? and current_user.admin? %>
+            <%= link_to "Delete User", user_path(user), method: :delete, data: { confirm: "Once you delete a User, their articles will be deleted as well. Please be certain." }, class: "btn btn-danger"%>
+          <% end %>
         </div>
       </div>
     </div>
