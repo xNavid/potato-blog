@@ -86,5 +86,35 @@ body {
   position: absolute;
   bottom: 0;
 }
+
+.button {
+}
+
+.signup {
+  background-color: #5cb85c !important;
+  color: #fff !important;
+  padding: 6px 12px !important;
+  margin: 6px 3px;
+  border: 2px solid #5cb85c;
+  border-radius: 4px;
+}
+
+.signup:hover {
+  background-color: #4cae4c !important;
+  border-color: #4cae4c !important;
+}
+
+.signin {
+  padding: 6px 12px !important;
+  margin: 6px 3px;
+  color: #337ab7 !important;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.signin:hover {
+  background-color: #eee !important;
+  border: 2px solid #eee;
+}
 @import "bootstrap-sprockets";
 @import "bootstrap";
