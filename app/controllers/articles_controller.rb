@@ -22,7 +22,6 @@ class ArticlesController < ApplicationController
 		else
 			render 'new'
 		end
-		
 	end
 	
 	def show
@@ -60,4 +59,5 @@ class ArticlesController < ApplicationController
 				redirect_to root_path
 			end
 		end
+		
 end
