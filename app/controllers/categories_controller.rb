@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   
+  before_action :require_admin, except: [:index, :show]
+  
   def index
     @categories = Category.paginate(page: params[:page], per_page: 5)
   end
@@ -27,4 +29,11 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name)
   end
   
+  def require_admin
+    if !signed_in? || (signed_in? and !current_user.admin?)
+      flash[:danger] = "401 - Unauthorized: Access is denied due to invalid credentials"
+      redirect_to categories_path
+    end
+  end
+      
 end
