@@ -23,10 +23,10 @@ body {
 }
 /*
 ===============================
-    Jumbotron
+    Home
 ===============================
 */
-.jumbotron {
+.home-bg {
   background-image: url('/potato-bg.jpeg');
   background-size: cover;
   min-height: 70vh;
@@ -40,6 +40,11 @@ body {
    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+.about-bg {
+  background-image: url('/potato-dead.jpeg');
+  background-size: cover;
+  min-height: 70vh;
+}
 
 /*
 ===============================
