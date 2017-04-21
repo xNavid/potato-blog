@@ -10,6 +10,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <%= link_to "#{category.name}", category_path(category) %>
+            <span class="label label-success"> <%= pluralize(category.articles.count, "article") %> </span>
           </div>
         </div>
       </div>
