@@ -17,13 +17,17 @@ body {
   border-radius: 0 !important;
 }
 
+.navbar-brand > img {
+  width: 25px;
+  height: 25px;
+}
 /*
 ===============================
     Jumbotron
 ===============================
 */
 .jumbotron {
-  
+  background-image: url('/potato-bg.jpeg');
   background-size: cover;
   min-height: 70vh;
 }
@@ -31,9 +35,11 @@ body {
 .content {
   display: inline-block;
   padding: 10px;
-  background-color: #eee;
+  background-color: rgba(236, 240, 241, .5);
   border-radius: 5px;
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+
 
 /*
 ===============================
