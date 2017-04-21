@@ -54,7 +54,7 @@ body {
 
 /*
 ===============================
-    Imports
+    Article show custom
 ===============================
 */
 
@@ -87,6 +87,12 @@ body {
   bottom: 0;
 }
 
+/*
+===============================
+    Custom Sign In & Sign Up Button
+===============================
+*/
+
 .button {
 }
 
@@ -116,5 +122,26 @@ body {
   background-color: #eee !important;
   border: 2px solid #eee;
 }
+
+/*
+===============================
+    label
+===============================
+*/
+
+.label > a {
+  color: #fff !important;
+}
+
+.label > a:hover {
+  text-decoration: none;
+}
+
+/*
+===============================
+    Imports
+===============================
+*/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
