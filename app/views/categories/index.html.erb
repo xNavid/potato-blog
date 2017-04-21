@@ -8,9 +8,12 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <%= link_to "#{category.name}", category_path(category) %>
-            <span class="label label-success"> <%= pluralize(category.articles.count, "article") %> </span>
+            <% if signed_in? and current_user.admin? %>
+              <span class="label label-primary"><%= link_to "edit", edit_category_path(category) %></span>
+            <% end %>
+            <p><span class="label label-success"> <%= pluralize(category.articles.count, "article") %> </span></p>
           </div>
         </div>
       </div>
